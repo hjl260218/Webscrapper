@@ -33,7 +33,10 @@ def extract_job(html):
   company = html.find("span", {"class": "companyName"}).string
   location = html.find("div", {"class": "companyLocation"}).string
   job_id = html.find("a", {"class":"jcs-JobTitle"})["data-jk"]
-  return {'title':title, 'company':company, 'location':location, 'link':f"https://kr.indeed.com/viewjob?jk={job_id}"}
+  return {'title':title, 
+          'company':company, 
+          'location':location,
+          'link':f"https://kr.indeed.com/viewjob?jk={job_id}"}
 
 def extract_jobs(last_page):
   jobs = []
